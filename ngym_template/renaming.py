@@ -37,7 +37,6 @@ def replace_expression(folder_path, search_expression, replacement_expression):
 
         for dir_name in dirs:
             dir_path = os.path.join(root, dir_name)
-
             # Rename the folder if the old expression is found
             new_dir_name = re.sub(search_expression, replacement_expression,
                                   dir_name)
@@ -45,7 +44,12 @@ def replace_expression(folder_path, search_expression, replacement_expression):
                 new_dir_path = os.path.join(root, new_dir_name)
                 os.rename(dir_path, new_dir_path)
                 print(f"Renamed folder: {dir_path} -> {new_dir_path}")
-
+        # rename main folder
+        new_folder_path = re.sub(search_expression, replacement_expression,
+                              folder_path)
+        if new_folder_path != folder_path:
+            new_dir_path = os.path.join(root, new_folder_path)
+            os.rename(dir_path, new_dir_path)
 
 def rename(folder_path, replacement_expression, search_expression='ngym_template'):
     """
