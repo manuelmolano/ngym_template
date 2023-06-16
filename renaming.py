@@ -49,7 +49,7 @@ def replace_expression(folder_path, search_expression, replacement_expression):
                               folder_path)
         if new_folder_path != folder_path:
             new_dir_path = os.path.join(root, new_folder_path)
-            os.rename(dir_path, new_dir_path)
+            os.rename(folder_path, new_dir_path)
 
 def rename(folder_path, replacement_expression, search_expression='ngym_template'):
     """
