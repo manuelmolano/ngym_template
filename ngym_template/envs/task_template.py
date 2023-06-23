@@ -8,7 +8,7 @@ Created on Fri June 16 15:44:59 2023
 from gym import spaces
 import neurogym as ngym
 
-class YourTask(ngym.PeriodEnv):
+class YourTask(ngym.TrialEnv):
     metadata = {}
 
     def __init__(self, dt=100, timing=None, extra_input_param=None):
