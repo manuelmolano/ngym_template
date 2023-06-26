@@ -15,7 +15,7 @@ class YourTask(ngym.TrialEnv):
         super().__init__(dt=dt)
        
 
-    def new_trial(self, **kwargs):
+    def _new_trial(self, **kwargs):
         """
         new_trial() is called when a trial ends to generate the next trial.
         Here you have to set:
